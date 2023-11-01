@@ -49,8 +49,6 @@
 ### DB
 ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
-<img src="" width="250" height="300"/>
-
 ### 화면
 | 메인 | 차량 검색  | 검색한 차량과 유사한 차량 추천 | 사용자 개인 맞춤형 |
 | :------------: | :------------: |:------------:|:------------:|
