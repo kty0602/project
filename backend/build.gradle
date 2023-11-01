@@ -1,0 +1,84 @@
+buildscript { //querydsl 위한 추가 내용
+    ext {
+        queryDslVersion = "5.0.0"
+    }
+}
+
+plugins {
+    id 'org.springframework.boot' version '2.7.5'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'java'
+    id 'war'
+    id "com.ewerk.gradle.plugins.querydsl" version "1.0.10" //querydsl 위한 추가 내용  - plugin 추가
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' } //형태소 분석 위한 추가 내용
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    //security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    // jwt
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+
+    implementation 'mysql:mysql-connector-java'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.projectlombok:lombok'
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client' //oauth2 위한 추가 내용
+    implementation 'org.springframework.boot:spring-boot-starter-security' //security 위한 추가 내용
+    implementation 'io.jsonwebtoken:jjwt:0.9.1' //jwt 위한 추가 내용
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    //querydsl 위한 추가 내용  - dependencies 추가
+    implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
+    implementation "com.querydsl:querydsl-apt:${queryDslVersion}"
+
+    implementation 'com.github.shin285:KOMORAN:3.3.9' //형태소 분석 위한 추가 내용
+}
+
+test {
+    useJUnitPlatform()
+}
+
+//querydsl 위한 추가 내용 - def 추가
+def querydslDir = "$buildDir/generated/querydsl"
+
+querydsl { //querydsl 위한 추가 내용  - querydsl 추가
+    jpa = true
+    querydslSourcesDir = querydslDir
+}
+
+sourceSets { //querydsl 위한 추가 내용  - sourceSets 추가
+    main.java.srcDir querydslDir
+}
+
+configurations { //querydsl 위한 추가 내용  - configurations 추가
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+    querydsl.extendsFrom compileClasspath
+}
+
+compileQuerydsl { //querydsl 위한 추가 내용
+    options.annotationProcessorPath = configurations.querydsl
+}

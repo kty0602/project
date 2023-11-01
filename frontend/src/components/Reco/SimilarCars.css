@@ -1,0 +1,42 @@
+.ranking-container {
+    text-align: center;
+  }
+  
+  .podium {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .ranking-1 {
+    border: 2px solid gold;
+    padding: 20px;
+  }
+  
+  .ranking-2 {
+    border: 2px solid silver;
+    padding: 20px;
+  }
+  
+  .ranking-3 {
+    border: 2px solid #cd7f32;
+    padding: 20px;
+  }
+  
+  .other-rankings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .ranking-item {
+    flex: 0 0 33.33%;
+    padding: 10px;
+  }
+  
+  .empty-ranking-text-container {
+    text-align: center;
+    font-size: 20px;
+    margin: 20px 0;
+  }
+  

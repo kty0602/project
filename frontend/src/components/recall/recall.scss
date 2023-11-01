@@ -1,0 +1,132 @@
+// 리콜 List
+@mixin recall-namespace {
+  $namespace: 'recall';
+}
+
+@include recall-namespace;
+$recall: 'recall';
+
+$color-0: #ffffff;
+$color-1: #425668;
+
+.#{$recall}-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50vh;
+}
+
+.#{$recall}-contents-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50vh;
+}
+
+.#{$recall}-box {
+  background: $color-1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 20vw;
+  height: 10vh;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.#{$recall}-header-text {
+  font-family: Bold;
+  color: $color-1;
+  font-size: 20px;
+  padding-left: 3vh;
+}
+
+.#{$recall}-contents-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Medium 01';
+  color: $color-0;
+  margin: auto;
+  font-size: 15px;
+  line-height: 0;
+}
+
+.#{$recall}-contents-text span {
+  margin-left: 10px;
+}
+
+// wordClude
+@mixin w-namespace {
+  $namespace: 'w';
+}
+
+@include w-namespace;
+$w: 'w';
+
+.#{$w}-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
+  margin-top: 130vh;
+}
+
+// chart
+@mixin chart-namespace {
+  $namespace: 'chart';
+}
+
+@include chart-namespace;
+$chart: 'chart';
+
+.#{$chart}-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 1024px;
+  margin: auto;
+  margin-top: 100vh;
+}
+
+// @media (max-width: 768px) {  // 기기의 너비가 768px 이하일 경우
+//   .#{$chart}-container {
+//     margin-top: 60vh;  // 상대적인 위치 조정
+//   }
+// }
+
+// @media (min-width: 769px) and (max-width: 1024px) {  // 기기의 너비가 769px 이상 1024px 이하일 경우
+//   .#{$chart}-container {
+//     margin-top: 70vh;  // 상대적인 위치 조정
+//   }
+// }
+
+// @media (min-width: 1025px) {  // 기기의 너비가 1025px 이상일 경우
+//   .#{$chart}-container {
+//     margin-top: 80vh;  // 상대적인 위치 조정
+//   }
+// }
+
+.#{$chart}-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Medium 01';
+  color: #ffffff;
+  margin: auto;
+  font-size: 15px;
+  line-height: 0;
+}

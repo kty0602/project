@@ -1,0 +1,36 @@
+.ranking-list {
+    flex: 1;
+    width: 100%;
+  }
+  
+  .ranking {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+  
+  .car-info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .car-info img {
+    width: 80px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  .details p {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  

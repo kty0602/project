@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'Medium 01';
+  font-style: normal;
+  src: url('./KoPubWorld\ Dotum\ Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Bold';
+  font-style: normal;
+  src: url('./KoPubWorld\ Dotum\ Bold.woff') format('woff');
+}
